@@ -1,0 +1,72 @@
+<main id="main" class="main">
+    <div class="pagetitle">
+        <h1>Data Tables</h1>
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a routerLink="/">Home</a></li>
+                <li class="breadcrumb-item">Tables</li>
+                <li class="breadcrumb-item active">Admins</li>
+            </ol>
+        </nav>
+    </div>
+    <div>{{ Admins[0].adminName }}</div>
+    <section class="section">
+        <div class="row">
+            <div class="col-lg-12 container">
+                <div class="card " style="width:fit-content; ">
+                    <div class="card-body">
+                        <h5 class="card-title table-body">Datatables</h5>
+
+                        <table class="table table-body ">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Address</th>
+                                    <th scope="col">Email</th>
+                                    <th scope="col">Phone No.</th>
+                                    <th scope="col">Date of Birth</th>
+                                    <th scope="col">Edit</th>
+                                    <th scope="col">Delete</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let admin of Admins; let i = index">
+                                    <th scope="row">{{ i + 1 }}</th>
+                                    <!-- <td>
+                      <img [src]="admin.adminImg" width="200" height="100" />
+                    </td> -->
+                                    <td>{{ admin.adminName }}</td>
+                                    <td>{{ admin.adminAddress }}</td>
+                                    <td>{{ admin.adminEmail }}</td>
+                                    <td>{{ admin.adminPhone }}</td>
+                                    <td>{{ admin.dob }}</td>
+                                    <!-- <td>{{ hotel.SSRoomPrice | currency: 'USD':'symbol'}}</td> -->
+                                    <td> 
+                      <button 
+                        type="button"
+                        class="btn btn-warning"
+                        routerLink="/editAdmin/{{ admin._id }}"
+                      >
+                        Edit
+                      </button>
+                    </td> 
+                                    <!-- <td>
+                      <button
+                        type="button"
+                        class="btn btn-danger"
+                        (click)="deleteHotel(hotel._id)"
+                      >
+                        Delete
+                      </button>
+                      
+                    </td> -->
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>

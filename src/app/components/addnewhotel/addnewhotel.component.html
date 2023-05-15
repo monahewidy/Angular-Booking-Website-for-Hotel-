@@ -1,0 +1,225 @@
+<div class="col-lg-8" style="margin-left: 330px">
+<div class="card">
+<div class="card-body">
+<h5 class="card-title">General Form Elements</h5>
+<form #hotlFrm="ngForm" (ngSubmit)="editHotel()">
+  <div class="row mb-3">
+    <label for="id" class="col-sm-2 col-form-label">id</label>
+    <div class="col-sm-10">
+      <input
+        type="text"
+        id="id"
+        name="id"
+        class="form-control"
+        [(ngModel)]="newHotel._id"
+      />
+    </div>
+  </div>
+  <div class="row mb-3">
+    <label for="CityId" class="col-sm-2 col-form-label">CityId</label>
+    <div class="col-sm-10">
+      <input
+        type="text"
+        id="CityId"
+        name="CityId"
+        class="form-control"
+        [(ngModel)]="newHotel.CityId"
+      />
+    </div>
+  </div>
+  <div class="row mb-3">
+    <label for="name" class="col-sm-2 col-form-label">name</label>
+    <div class="col-sm-10">
+      <input
+        type="text"
+        id="name"
+        name="name"
+        class="form-control"
+        [(ngModel)]="newHotel.name"
+      />
+    </div>
+  </div>
+  <div class="row mb-3">
+    <label for="name" class="col-sm-2 col-form-label">City name</label>
+    <div class="col-sm-10">
+      <input
+        type="text"
+        id="name"
+        name="name"
+        class="form-control"
+        [(ngModel)]="newHotel.city"
+      />
+    </div>
+  </div>
+  <div class="row mb-3">
+    <label for="Latitute" class="col-sm-2 col-form-label"
+      >location(Latitute)</label
+    >
+    <div class="col-sm-10">
+      <input
+        type="text"
+        id="Latitute"
+        name="Latitute"
+        class="form-control"
+        [(ngModel)]="newHotel.location[0]"
+      />
+    </div>
+  </div>
+  <div class="row mb-3">
+    <label for="Longitute" class="col-sm-2 col-form-label"
+      >location(Longitute)</label
+    >
+    <div class="col-sm-10">
+      <input
+        type="text"
+        id="Longitute"
+        name="Longitute"
+        class="form-control"
+        [(ngModel)]="newHotel.location[1]"
+      />
+    </div>
+  </div>
+  <div class="row mb-3">
+    <label for="Country" class="col-sm-2 col-form-label">Country </label>
+    <div class="col-sm-10">
+      <input
+      class="form-control"
+        type="text"
+        id="Country"
+        name="Country"
+        [(ngModel)]="newHotel.Address.Country"
+        />
+    </div>
+  </div>
+  <div class="row mb-3">
+    <label for="City" class="col-sm-2 col-form-label">City </label>
+    <div class="col-sm-10">
+      <input
+      class="form-control"
+        type="text"
+        id="City"
+        name="City"
+        [(ngModel)]="newHotel.Address.City"
+        />
+    </div>
+  </div>
+  <div class="row mb-3">
+    <label for="Street" class="col-sm-2 col-form-label">Street </label>
+    <div class="col-sm-10">
+      <input
+      class="form-control"
+      type="text"
+      id="Street"
+      name="Street"
+      [(ngModel)]="newHotel.Address.Street"
+      />
+    </div>
+  </div>
+  <div class="row mb-3">
+    <label for="Facilities" class="col-sm-2 col-form-label">Facilities</label>
+    <div class="col-sm-10">
+      <input
+      type="text"
+        class="form-control"
+        [(ngModel)]="newHotel.Facilities"
+        name="Facilities"
+        />
+      </div>
+  </div>
+  <div class="row mb-3">
+    <label for="inputTime" class="col-sm-2 col-form-label">SSRoomPrice</label>
+    <div class="col-sm-10">
+      <input
+      type="text"
+      name="SSRoomPrice"
+      class="form-control"
+      [(ngModel)]="newHotel.SSRoomPrice"
+      />
+    </div>
+  </div>
+  <div class="row mb-3">
+    <label for="inputColor" class="col-sm-2 col-form-label"
+    >Availability
+    </label>
+    <div class="col-sm-10">
+      <input
+      type="text"
+      class="form-control"
+      id="exampleColorInput"
+      name="Availability"
+      [(ngModel)]="newHotel.Availability"
+
+      />
+    </div>
+  </div>
+  <div class="row mb-3">
+    <label for="inputPassword" class="col-sm-2 col-form-label"
+      >HotelDescription</label
+    >
+    <div class="col-sm-10">
+      <textarea
+        class="form-control"
+        style="height: 100px"
+        [(ngModel)]="newHotel.HotelDescription"
+      ></textarea>
+    </div>
+  </div>
+  <div class="row mb-3">
+    <label for="HotelImg" class="col-sm-2 col-form-label">HotelImg</label>
+    <div class="col-sm-10">
+      <input
+        type="text"
+        id="HotelImg"
+        name="HotelImg"
+        class="form-control"
+        [(ngModel)]="newHotel.HotelImg"
+      />
+    </div>
+  </div>
+  <div class="row mb-3">
+    <label for="id" class="col-sm-2 col-form-label">HotelImages</label>
+    <div class="col-sm-10">
+      <input
+      type="text"
+      id="HotelImages"
+      name="HotelImages"
+      class="form-control"
+      [(ngModel)]="newHotel.HotelImages"
+      />
+    </div>
+  </div>
+  <div class="row mb-3">
+    <label for="HotelInfo" class="col-sm-2 col-form-label">HotelInfo</label>
+    <div class="col-sm-10">
+      <input
+      type="text"
+      id="HotelInfo"
+      name="HotelInfo"
+        class="form-control"
+        [(ngModel)]="newHotel.HotelInfo"
+      />
+    </div>
+  </div>
+
+  <div class="d-flex justify-content-around">
+    <button
+      type="button"
+      type="submit"
+      class="btn btn-warning"
+      (click)="editHotel()"
+    >
+      Edit
+    </button>
+    <button
+    type="button"
+    class="btn btn-danger"
+    (click)="AddHotel()"
+  >
+    add
+  </button>
+  </div>
+</form>
+<h1>{{ newHotel | json }}</h1>
+</div>
+</div>
+</div>

@@ -1,0 +1,81 @@
+<main id="main" class="main">
+  <div class="pagetitle">
+    <h1>Data Tables</h1>
+    <nav>
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a routerLink="/">Home</a></li>
+        <li class="breadcrumb-item">Tables</li>
+        <li class="breadcrumb-item active">Data</li>
+      </ol>
+    </nav>
+  </div>
+  <div>{{ Hotels[0].name }}</div>
+  <section class="section">
+    <div class="row">
+      <div class="col-lg-12 container" >
+        <div class="card "   style="width:fit-content; " >
+          <div class="card-body" >
+            <h5 class="card-title table-body">Datatables</h5>
+  
+            <table class="table table-body " >
+              <thead >
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">img</th>
+                  <th scope="col">Name</th>
+                  <th scope="col">City</th>
+                  <th scope="col">Available</th>
+                  <th scope="col">RoomPrice</th>
+                  <th scope="col">Edit</th>
+                  <th scope="col">Delete</th>
+                 
+               
+                  
+                </tr>
+              </thead>
+              <tbody>
+                <tr
+                  *ngFor="let hotel of Hotels; let i = index"
+                  [ngStyle]="{
+                    'background-color': hotel.Availability ? '' : 'pink'
+                  }"
+                >
+                  <th scope="row">{{ i + 1 }}</th>
+                  <td>
+                    <img [src]="hotel.HotelImg" width="200" height="100" />
+                  </td>
+                  <td>{{ hotel.name }}</td>
+                  <td>{{ hotel.Address.City }},
+                    <br>
+                    {{ hotel.Address.Country }}</td>
+                  <td>{{ hotel.Availability }}</td>
+                  <td>{{ hotel.SSRoomPrice | currency : "EGP " }}</td>
+                  <!-- <td>{{ hotel.SSRoomPrice | currency: 'USD':'symbol'}}</td> -->
+                  <td>
+                    <button 
+                      type="button"
+                      class="btn btn-warning"
+                      routerLink="/editHotel/{{ hotel._id }}"
+                    >
+                      Edit
+                    </button>
+                  </td>
+                  <td>
+                    <button
+                      type="button"
+                      class="btn btn-danger"
+                      (click)="deleteHotel(hotel._id)"
+                    >
+                      Delete
+                    </button>
+                    
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
